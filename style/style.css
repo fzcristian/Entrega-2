@@ -70,24 +70,37 @@ h3 {
 
 /* Containers and cards */
 .container.bg-light {
-  background: var(--color-light);
-  color: var(--color-primary);
-  border: 2px solid var(--color-accent);
-  border-radius: 1rem;
+  background: linear-gradient(145deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-light);
+  border: none;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-align: justify;
+}
+
+.container.bg-light p {
+  color: var(--color-light);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.container.bg-light p strong {
+  color: var(--color-accent); /* acento en palabras clave */
 }
 
 /* Carousel */
 .carousel {
-  background: var(--color-secondary);
-  border-radius: 1rem;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+  max-width: 600px;  /* límite en desktop */
+  width: 90%;        /* ocupa gran parte del ancho en mobile */
+  margin: 0 auto;    /* siempre centrado */
 }
 
 .carousel-inner img {
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  object-fit: cover;
 }
 
 /* Grid layout */
@@ -170,10 +183,8 @@ h3 {
   border-radius: 12px;
 }
 
-p {
+main > p {
   color: var(--color-accent);
-  font-size: 1rem;
-  margin-bottom: 20px;
 }
 
 /* Formulario */
@@ -288,6 +299,21 @@ main, .album, form {
   button[type="submit"] {
     font-size: 1.1rem;
   }
+
+  .container.bg-light {
+    width: 90% !important;
+    padding: 1.5rem;
+  }
+
+  .container.bg-light p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .carousel {
+    width: 95%; /* carrusel más grande en mobile */
+  }
 }
 
 @media (max-width: 480px) {
@@ -314,5 +340,15 @@ main, .album, form {
 
   button[type="submit"] {
     font-size: 1rem;
+  }
+
+  .container.bg-light {
+    width: 95% !important;
+    padding: 1rem;
+  }
+
+  .container.bg-light p {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 }
