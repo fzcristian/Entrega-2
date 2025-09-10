@@ -83,21 +83,36 @@
     }
   }
 
-  
+  // Logo y navbar brand
+  .logo-oasis,
   .navbar-brand img {
     width: 70px;
     height: 70px;
   }
 
-  #carouselExampleControls {
-    width: 100% !important;
+  .navbar-brand span {
+    font-size: 1rem !important;
   }
 
+  // Carrusel
+  #carouselExampleControls,
+  .carousel {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .carousel-inner img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+
+  // Fan text container
   .container.fan-text {
     padding: 1rem;
     font-size: 0.98rem;
   }
 
+  // Footer
   footer .mb-3 a {
     margin: 0 0.5rem;
   }
@@ -112,9 +127,49 @@
   main {
     margin-bottom: 0 !important;
   }
+
+  // Navbar menu animación y estilo
+  .navbar-nav .nav-link {
+    position: relative;
+    color: $color-accent !important;
+    background: transparent;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: color 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: menuFadeIn 0.6s forwards;
+  }
+  .navbar-nav .nav-link:nth-child(1) { animation-delay: 0.2s; }
+  .navbar-nav .nav-link:nth-child(2) { animation-delay: 0.4s; }
+  .navbar-nav .nav-link:nth-child(3) { animation-delay: 0.6s; }
+
+  .navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $color-accent;
+    transition: width 0.3s;
+    margin: 0 auto;
+  }
+  .navbar-nav .nav-link:hover::after,
+  .navbar-nav .nav-link.active::after {
+    width: 60%;
+  }
 }
 
-// Fan text
+// Animación menú hamburguesa
+@keyframes menuFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Fan text (global, no responsive)
 .fan-text {
   background: #1a1a1a;
   color: #f0f0f0;
