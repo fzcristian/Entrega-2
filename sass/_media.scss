@@ -1,0 +1,134 @@
+// Responsive
+@media (max-width: 1024px) {
+  .parent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  .album {
+    padding: 10px;
+  }
+
+  iframe {
+    height: 250px;
+  }
+
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  form {
+    padding: 25px;
+    max-width: 90%;
+  }
+
+  button[type="submit"] {
+    font-size: 1.1rem;
+  }
+
+  .container.bg-light {
+    width: 90% !important;
+    padding: 1.5rem;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: left;
+    }
+  }
+
+  .carousel {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .album {
+    padding: 8px;
+  }
+
+  iframe {
+    height: 220px;
+  }
+
+  .parent {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+  }
+
+  .container.bg-light {
+    width: 95% !important;
+    padding: 1rem;
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+
+  
+  .navbar-brand img {
+    width: 70px;
+    height: 70px;
+  }
+
+  #carouselExampleControls {
+    width: 100% !important;
+  }
+
+  .container.fan-text {
+    padding: 1rem;
+    font-size: 0.98rem;
+  }
+
+  footer .mb-3 a {
+    margin: 0 0.5rem;
+  }
+
+  footer {
+    margin-top: 1rem !important;
+    padding: 1rem 0 !important;
+    font-size: 0.95rem;
+    display: block !important;
+  }
+
+  main {
+    margin-bottom: 0 !important;
+  }
+}
+
+// Fan text
+.fan-text {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  text-align: justify;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+
+    strong {
+      color: $color-accent;
+    }
+  }
+}

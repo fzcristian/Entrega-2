@@ -1,0 +1,279 @@
+// Variables (reemplazo de :root)
+$color-dark: #0d0d0d;      // negro profundo
+$color-primary: #1c1c1c;   // gris muy oscuro
+$color-secondary: #2b2b2b; // gris oscuro
+$color-accent: #f5af19;    // amarillo dorado
+$color-light: #eaeaea;     // texto claro
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Archivo Black', sans-serif;
+  background: $color-dark;
+  color: $color-light;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+// Navbar
+.navbar {
+  background: $color-dark;
+  border-bottom: 3px solid $color-accent;
+
+  .navbar-nav {
+    .nav-link {
+      color: $color-light;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &.active {
+        color: $color-accent;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+
+h1 {
+  font-size: 3rem;
+  border-bottom: 4px solid $color-accent;
+  padding-bottom: 0.5rem;
+  color: $color-light;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: $color-accent;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: $color-light;
+}
+
+// Contenedor de texto (debajo del carrusel)
+.container.bg-light {
+  background: $color-secondary;
+  color: $color-light;
+  border: 1px solid $color-dark;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  text-align: justify;
+
+  p {
+    color: $color-light;
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    strong {
+      color: $color-accent;
+    }
+  }
+}
+// Headings
+h1, h2, h3 {
+  font-family: 'Archivo Black', sans-serif;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  @extend %centered-text;
+}
+
+// Carousel
+.carousel {
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+
+  .carousel-inner {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.8rem;
+      object-fit: cover;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+  }
+}
+
+// Grid layout
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  align-items: center;
+
+  .div1 { grid-area: 1 / 1 / 3 / 3; }
+  .div2 { grid-area: 1 / 3 / 3 / 6; }
+  .div3 { grid-area: 3 / 1 / 5 / 4; }
+  .div4 { grid-area: 3 / 4 / 5 / 6; }
+
+  .div1 img, .div4 img {
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    object-fit: cover;
+  }
+
+  .div2, .div3 {
+    background: $color-primary;
+    color: $color-light;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+
+    h2 {
+      font-size: 2rem;
+      color: $color-accent;
+      margin-bottom: 1rem;
+      text-shadow: none;
+    }
+  }
+
+  img {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+// Discografía
+#discografia-oasis {
+  padding: 20px;
+
+  .discografia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .album {
+      background-color: $color-secondary;
+      border-radius: 15px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      iframe {
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
+p {
+  color: $color-light;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+// Formulario
+form {
+  background-color: $color-primary;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  color: $color-light;
+
+  .form-label {
+    font-size: 1.2rem;
+    color: $color-light;
+  }
+
+  .form-control {
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid $color-accent;
+    padding: 12px;
+    font-size: 1rem;
+    background: transparent;
+    color: $color-light;
+
+    &:focus {
+      border-color: $color-accent;
+      box-shadow: 0 0 5px rgba(245,175,25,0.7);
+    }
+  }
+
+  textarea.form-control {
+    resize: vertical;
+  }
+}
+
+// Botón de envío
+button[type="submit"] {
+  background-color: $color-accent;
+  color: $color-dark;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  padding: 12px 20px;
+  border: none;
+  width: 100%;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $color-secondary;
+    cursor: pointer;
+  }
+}
+
+// Footer
+footer {
+  background: $color-dark;
+  color: $color-light;
+  border-top: 3px solid $color-accent;
+  padding: 1rem;
+  text-align: center;
+
+  a {
+    color: $color-light;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+// Animaciones
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main, .album, form {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+

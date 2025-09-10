@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/style.css">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <title>Oasis | Historia</title>
 </head>
 <body>
-    <header>
+    <header data-aos="fade-down">
       <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--color-dark);">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="../index.html">
@@ -34,39 +36,38 @@
     </nav>
     </header>
    <main>
-    <section class="container my-5">
+    <section class="container my-5" data-aos="fade-up">
       <div class="row">
         <h1> Historia</h1>
-        <div class="col-md-6 order-md-1">
+        <div class="col-md-6 order-md-1" data-aos="zoom-in">
           <img src="../media/iniciosgrid.jpg" alt="Oasis inicio" class="img-fluid rounded shadow">
         </div>
-        <div class="col-md-6 order-md-2">
+        <div class="col-md-6 order-md-2" data-aos="fade-left">
           <h2>Los comienzos</h2>
           <p>La historia de Oasis arranca en Manchester, Inglaterra, a comienzos de los años 90, en medio de una escena musical vibrante marcada por el auge del britpop. En 1991, un grupo llamado The Rain tocaba en pubs locales, hasta que la llegada de Liam Gallagher como cantante y la posterior incorporación de su hermano Noel como guitarrista y principal compositor, le dieron un nuevo rumbo al proyecto. Con ese cambio, la banda adoptó el nombre con el que pasaría a la historia: Oasis...</p>
         </div>
-        <div class="col-md-6 order-md-3">
+        <div class="col-md-6 order-md-3" data-aos="fade-right">
           <h2>El salto a la fama</h2>
           <p>El verdadero despegue de Oasis llegó en 1994 con el lanzamiento de su primer álbum, Definitely Maybe. Desde el primer día quedó claro que no era un disco más: se convirtió en el debut más vendido en la historia del Reino Unido en aquel momento, y rápidamente colocó a la banda en el centro de la escena musical. Canciones como Live Forever, Supersonic y Cigarettes & Alcohol marcaron un antes y un después...</p>
         </div>
-        <div class="col-md-6 order-md-4">
+        <div class="col-md-6 order-md-4" data-aos="zoom-in">
           <img src="../media/iniciosgrid2.jpg" alt="Oasis éxito" class="img-fluid rounded shadow">
         </div>
       </div>
     </section>
-    <section class="container my-5 text-center">
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <img src="../media/liamnoelad.png" alt="Oasis vuelve" class="img-fluid rounded shadow">
-    </div>
-    <div class="col-md-6">
-      <h2 class="mb-3">El Regreso Más Esperado</h2>
-      <p class="lead">Después de años de rumores, silencios y caminos separados, Oasis vuelve a sonar más fuerte que nunca. La banda que marcó una generación está lista para reencontrarse con sus fans y revivir los himnos que nunca dejaron de sonar. Porque hay historias que merecen una segunda vuelta, y esta es una de ellas.</p>
-    </div>
-  </div>
-</section>
-
+    <section class="container my-5 text-center" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-md-6" data-aos="zoom-in">
+          <img src="../media/liamnoelad.png" alt="Oasis vuelve" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <h2 class="mb-3">El Regreso Más Esperado</h2>
+          <p class="lead">Después de años de rumores, silencios y caminos separados, Oasis vuelve a sonar más fuerte que nunca. La banda que marcó una generación está lista para reencontrarse con sus fans y revivir los himnos que nunca dejaron de sonar. Porque hay historias que merecen una segunda vuelta, y esta es una de ellas.</p>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="text-light py-4 mt-5">
+  <footer class="text-light py-4 mt-5" data-aos="fade-up">
     <div class="container text-center">
       <div class="mb-3">
         <a href="https://instagram.com" target="_blank" class="text-light mx-2">
@@ -87,5 +88,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
