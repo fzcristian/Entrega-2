@@ -1,52 +1,136 @@
-// Responsive
-@media (max-width: 1024px) {
-  .parent {
-    grid-template-columns: repeat(3, 1fr);
+@use 'variables' as *;
+
+// Animación menú hamburguesa (global)
+@keyframes menuFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 768px) {
-  h2 {
-    font-size: 2rem;
-  }
+// Fan text (global, no responsive)
+.fan-text {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  text-align: justify;
 
-  .album {
-    padding: 10px;
-  }
-
-  iframe {
-    height: 250px;
-  }
-
-  .parent {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  form {
-    padding: 25px;
-    max-width: 90%;
-  }
-
-  button[type="submit"] {
+  p {
     font-size: 1.1rem;
-  }
+    line-height: 1.8;
 
-  .container.bg-light {
-    width: 90% !important;
-    padding: 1.5rem;
-
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-      text-align: left;
+    strong {
+      color: $color-accent;
     }
   }
+}
 
-  .carousel {
-    width: 95%;
+// --- Desktop (992px en adelante) ---
+@media (min-width: 992px) {
+  .oasis-main-title,
+  .fan-text,
+  .oasis-history-grid,
+  #discografia-oasis,
+  .oasis-footer-content {
+    max-width: 1200px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .oasis-carousel {
+    max-width: 600px;
+  }
+
+  .discografia-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .oasis-history-row {
+    gap: 2rem;
+  }
+
+  .album iframe {
+    height: 380px;
+  }
+
+  .oasis-footer-social {
+    gap: 1rem;
   }
 }
 
+// --- Tablet (768px a 991px) ---
+@media (min-width: 768px) and (max-width: 991px) {
+  .oasis-main-title,
+  .fan-text,
+  .oasis-history-grid,
+  #discografia-oasis,
+  .oasis-footer-content {
+    max-width: 900px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .oasis-carousel {
+    max-width: 500px;
+  }
+
+  .discografia-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .oasis-history-row {
+    gap: 1.5rem;
+  }
+
+  .album iframe {
+    height: 300px;
+  }
+
+  .oasis-footer-social {
+    gap: 0.7rem;
+  }
+}
+
+// --- Mobile (hasta 767px) ---
+@media (max-width: 767px) {
+  .oasis-main-title,
+  .fan-text,
+  .oasis-history-grid,
+  #discografia-oasis,
+  .oasis-footer-content {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .oasis-carousel {
+    max-width: 100%;
+  }
+
+  .discografia-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .oasis-history-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .album iframe {
+    height: 200px;
+  }
+
+  .oasis-footer-social {
+    gap: 0.5rem;
+  }
+}
+
+// --- Extra small (hasta 480px) ---
 @media (max-width: 480px) {
   h2 {
     font-size: 1.8rem;
@@ -73,17 +157,6 @@
     font-size: 1rem;
   }
 
-  .container.bg-light {
-    width: 95% !important;
-    padding: 1rem;
-
-    p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-  }
-
-  // Logo y navbar brand
   .logo-oasis,
   .navbar-brand img {
     width: 70px;
@@ -94,7 +167,6 @@
     font-size: 1rem !important;
   }
 
-  // Carrusel
   #carouselExampleControls,
   .carousel {
     width: 100% !important;
@@ -106,15 +178,9 @@
     object-fit: cover;
   }
 
-  // Fan text container
   .container.fan-text {
     padding: 1rem;
     font-size: 0.98rem;
-  }
-
-  // Footer
-  footer .mb-3 a {
-    margin: 0 0.5rem;
   }
 
   footer {
@@ -128,7 +194,6 @@
     margin-bottom: 0 !important;
   }
 
-  // Navbar menu animación y estilo
   .navbar-nav .nav-link {
     position: relative;
     color: $color-accent !important;
@@ -161,29 +226,41 @@
   }
 }
 
-// Animación menú hamburguesa
-@keyframes menuFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+// --- Medium (max-width: 1024px) ---
+@media (max-width: 1024px) {
+  .parent {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-// Fan text (global, no responsive)
-.fan-text {
-  background: #1a1a1a;
-  color: #f0f0f0;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-  text-align: justify;
+// --- Small (max-width: 768px) ---
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
 
-  p {
+  .album {
+    padding: 10px;
+  }
+
+  iframe {
+    height: 250px;
+  }
+
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  form {
+    padding: 25px;
+    max-width: 90%;
+  }
+
+  button[type="submit"] {
     font-size: 1.1rem;
-    line-height: 1.8;
+  }
 
-    strong {
-      color: $color-accent;
-    }
+  .carousel {
+    width: 95%;
   }
 }

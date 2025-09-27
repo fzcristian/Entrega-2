@@ -1,9 +1,3 @@
-h1, h2, h3 {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -26,20 +20,110 @@ a:hover {
   color: #f5af19;
 }
 
+.oasis-center {
+  text-align: center;
+}
+
+.oasis-margin {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.oasis-main-title {
+  margin-bottom: 2rem;
+}
+
+img, .oasis-img-carousel {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.oasis-main-title,
+.fan-text,
+.oasis-history-grid,
+#discografia-oasis {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.oasis-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.oasis-history-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.oasis-history-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.oasis-history-img {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.oasis-history-text {
+  flex: 2 1 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .oasis-history-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .oasis-history-img,
+  .oasis-history-text {
+    flex: 1 1 100%;
+  }
+}
+.oasis-navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
 .navbar {
   background: #0d0d0d;
   border-bottom: 3px solid #f5af19;
 }
-.navbar .navbar-brand {
+
+.navbar-brand {
   display: flex;
   align-items: center;
 }
-.navbar .navbar-brand .logo-oasis {
+.navbar-brand .logo-oasis {
   width: 120px;
   height: 120px;
   transition: width 0.3s, height 0.3s;
 }
-.navbar .navbar-brand .brand-subtitle {
+.navbar-brand .brand-subtitle {
   font-size: 1.1rem;
   color: #f5af19;
   letter-spacing: 0.1em;
@@ -48,23 +132,49 @@ a:hover {
   transition: color 0.3s, opacity 0.3s;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.18);
 }
-.navbar .navbar-brand .brand-subtitle:hover {
+.navbar-brand .brand-subtitle:hover {
   color: rgb(247.125, 192, 73.875);
   opacity: 1;
 }
-.navbar .navbar-nav .nav-link {
+
+.navbar-nav {
+  margin-left: auto;
+}
+.navbar-nav .nav-link {
   color: #eaeaea;
   transition: color 0.3s ease;
 }
-.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
   color: #f5af19;
   text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    margin-left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .navbar-brand .logo-oasis {
+    width: 70px;
+    height: 70px;
+  }
+  .navbar-brand .brand-subtitle {
+    font-size: 1rem;
+  }
+}
+h1, h2, h3 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1, h2, h3 {
   font-family: "Archivo Black", sans-serif;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  line-height: 1.2;
 }
 
 h1 {
@@ -72,34 +182,19 @@ h1 {
   border-bottom: 4px solid #f5af19;
   padding-bottom: 0.5rem;
   color: #eaeaea;
+  letter-spacing: 0.05em;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #f5af19;
+  letter-spacing: 0.03em;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #eaeaea;
-}
-
-.container.bg-light {
-  background: #2b2b2b;
-  color: #eaeaea;
-  border: 1px solid #0d0d0d;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  text-align: justify;
-}
-.container.bg-light p {
-  color: #eaeaea;
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-.container.bg-light p strong {
-  color: #f5af19;
+  letter-spacing: 0.02em;
 }
 
 .carousel {
@@ -107,20 +202,24 @@ h3 {
   width: 90%;
   margin: 0 auto;
 }
-.carousel .carousel-inner img {
+.carousel .carousel-inner .carousel-item img {
   width: 100%;
   height: auto;
   border-radius: 0.8rem;
   object-fit: cover;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+.carousel .carousel-control-prev-icon,
+.carousel .carousel-control-next-icon {
+  filter: drop-shadow(0 0 2px #f5af19);
 }
 
 .parent {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
+  gap: 2rem;
   max-width: 1200px;
   margin: 3rem auto;
   align-items: center;
@@ -142,6 +241,12 @@ h3 {
   height: auto;
   min-height: 350px;
   object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+.parent .div1 img:hover, .parent .div4 img:hover {
+  transform: scale(1.03);
 }
 .parent .div2, .parent .div3 {
   background: #1c1c1c;
@@ -156,82 +261,89 @@ h3 {
   margin-bottom: 1rem;
   text-shadow: none;
 }
-.parent img {
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
-}
-.parent img:hover {
-  transform: scale(1.03);
-}
 
 #discografia-oasis {
-  padding: 20px;
+  padding: 2rem 1rem;
 }
 #discografia-oasis .discografia-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 #discografia-oasis .discografia-grid .album {
   background-color: #2b2b2b;
-  border-radius: 15px;
+  border-radius: 1rem;
   overflow: hidden;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  padding: 1.5rem 1rem;
 }
 #discografia-oasis .discografia-grid .album:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+#discografia-oasis .discografia-grid .album h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #f5af19;
+}
+#discografia-oasis .discografia-grid .album p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #eaeaea;
+  opacity: 0.85;
 }
 #discografia-oasis .discografia-grid .album iframe {
-  border-radius: 12px;
-}
-
-p {
-  color: #eaeaea;
-  font-size: 1rem;
-  margin-bottom: 20px;
+  border-radius: 0.75rem;
+  width: 100%;
+  min-height: 200px;
+  max-height: 352px;
 }
 
 form {
   background-color: #1c1c1c;
-  padding: 30px;
-  border-radius: 15px;
+  padding: 2rem;
+  border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
   max-width: 600px;
   margin: 0 auto;
   color: #eaeaea;
 }
 form .form-label {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #eaeaea;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 form .form-control {
-  border-radius: 10px;
+  border-radius: 0.7rem;
   border: none;
   border-bottom: 2px solid #f5af19;
-  padding: 12px;
+  padding: 0.75rem;
   font-size: 1rem;
   background: transparent;
   color: #eaeaea;
+  margin-bottom: 1.2rem;
 }
 form .form-control:focus {
   border-color: #f5af19;
   box-shadow: 0 0 5px rgba(245, 175, 25, 0.7);
+  outline: none;
 }
 form textarea.form-control {
   resize: vertical;
+  min-height: 120px;
 }
 
 button[type=submit] {
   background-color: #f5af19;
   color: #0d0d0d;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 0.7rem;
+  padding: 0.75rem 1.5rem;
   border: none;
   width: 100%;
   transition: background-color 0.3s;
@@ -245,7 +357,7 @@ footer {
   background: #0d0d0d;
   color: #eaeaea;
   border-top: 3px solid #f5af19;
-  padding: 1rem;
+  padding: 1.5rem 0;
   text-align: center;
 }
 footer a {
@@ -255,19 +367,245 @@ footer a {
 footer a:hover {
   color: #f5af19;
 }
+footer .bi {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  vertical-align: middle;
+}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+.oasis-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oasis-footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@keyframes menuFadeIn {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-main, .album, form {
-  animation: fadeIn 0.8s ease forwards;
+.fan-text {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  text-align: justify;
+}
+.fan-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+.fan-text p strong {
+  color: #f5af19;
+}
+
+@media (min-width: 992px) {
+  .oasis-main-title,
+  .fan-text,
+  .oasis-history-grid,
+  #discografia-oasis,
+  .oasis-footer-content {
+    max-width: 1200px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .oasis-carousel {
+    max-width: 600px;
+  }
+  .discografia-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .oasis-history-row {
+    gap: 2rem;
+  }
+  .album iframe {
+    height: 380px;
+  }
+  .oasis-footer-social {
+    gap: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .oasis-main-title,
+  .fan-text,
+  .oasis-history-grid,
+  #discografia-oasis,
+  .oasis-footer-content {
+    max-width: 900px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .oasis-carousel {
+    max-width: 500px;
+  }
+  .discografia-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .oasis-history-row {
+    gap: 1.5rem;
+  }
+  .album iframe {
+    height: 300px;
+  }
+  .oasis-footer-social {
+    gap: 0.7rem;
+  }
+}
+@media (max-width: 767px) {
+  .oasis-main-title,
+  .fan-text,
+  .oasis-history-grid,
+  #discografia-oasis,
+  .oasis-footer-content {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .oasis-carousel {
+    max-width: 100%;
+  }
+  .discografia-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .oasis-history-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .album iframe {
+    height: 200px;
+  }
+  .oasis-footer-social {
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+  .album {
+    padding: 8px;
+  }
+  iframe {
+    height: 220px;
+  }
+  .parent {
+    grid-template-columns: 1fr;
+  }
+  form {
+    padding: 15px;
+    max-width: 100%;
+  }
+  button[type=submit] {
+    font-size: 1rem;
+  }
+  .logo-oasis,
+  .navbar-brand img {
+    width: 70px;
+    height: 70px;
+  }
+  .navbar-brand span {
+    font-size: 1rem !important;
+  }
+  #carouselExampleControls,
+  .carousel {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .carousel-inner img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+  .container.fan-text {
+    padding: 1rem;
+    font-size: 0.98rem;
+  }
+  footer {
+    margin-top: 1rem !important;
+    padding: 1rem 0 !important;
+    font-size: 0.95rem;
+    display: block !important;
+  }
+  main {
+    margin-bottom: 0 !important;
+  }
+  .navbar-nav .nav-link {
+    position: relative;
+    color: #f5af19 !important;
+    background: transparent;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: color 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: menuFadeIn 0.6s forwards;
+  }
+  .navbar-nav .nav-link:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  .navbar-nav .nav-link:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .navbar-nav .nav-link:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  .navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f5af19;
+    transition: width 0.3s;
+    margin: 0 auto;
+  }
+  .navbar-nav .nav-link:hover::after,
+  .navbar-nav .nav-link.active::after {
+    width: 60%;
+  }
+}
+@media (max-width: 1024px) {
+  .parent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+  .album {
+    padding: 10px;
+  }
+  iframe {
+    height: 250px;
+  }
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  form {
+    padding: 25px;
+    max-width: 90%;
+  }
+  button[type=submit] {
+    font-size: 1.1rem;
+  }
+  .carousel {
+    width: 95%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

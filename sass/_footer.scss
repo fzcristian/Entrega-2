@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+footer {
+  background: $color-dark;
+  color: $color-light;
+  border-top: 3px solid $color-accent;
+  padding: 1.5rem 0;
+  text-align: center;
+
+  a {
+    color: $color-light;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  .bi {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    vertical-align: middle;
+  }
+}
+
+.oasis-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oasis-footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}

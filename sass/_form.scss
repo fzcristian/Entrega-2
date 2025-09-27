@@ -1,0 +1,56 @@
+@use 'variables' as *;
+
+form {
+  background-color: $color-primary;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  color: $color-light;
+
+  .form-label {
+    font-size: 1.1rem;
+    color: $color-light;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .form-control {
+    border-radius: 0.7rem;
+    border: none;
+    border-bottom: 2px solid $color-accent;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background: transparent;
+    color: $color-light;
+    margin-bottom: 1.2rem;
+
+    &:focus {
+      border-color: $color-accent;
+      box-shadow: 0 0 5px rgba(245,175,25,0.7);
+      outline: none;
+    }
+  }
+
+  textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+button[type="submit"] {
+  background-color: $color-accent;
+  color: $color-dark;
+  font-size: 1.1rem;
+  border-radius: 0.7rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  width: 100%;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $color-secondary;
+    cursor: pointer;
+  }
+}

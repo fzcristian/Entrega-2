@@ -1,0 +1,66 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+// Navbar principal
+.navbar {
+  background: $color-dark;
+  border-bottom: 3px solid $color-accent;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+
+  .logo-oasis {
+    width: 120px;
+    height: 120px;
+    transition: width 0.3s, height 0.3s;
+  }
+
+  .brand-subtitle {
+    font-size: 1.1rem;
+    color: $color-accent;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    opacity: 0.85;
+    transition: color 0.3s, opacity 0.3s;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.18);
+
+    &:hover {
+      color: color.adjust($color-accent, $lightness: 10%);
+      opacity: 1;
+    }
+  }
+}
+
+.navbar-nav {
+  margin-left: auto;
+
+  .nav-link {
+    color: $color-light;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &.active {
+      color: $color-accent;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Responsive: menú hamburguesa
+@media (max-width: 991px) {
+  .navbar-nav {
+    margin-left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .navbar-brand .logo-oasis {
+    width: 70px;
+    height: 70px;
+  }
+  .navbar-brand .brand-subtitle {
+    font-size: 1rem;
+  }
+}

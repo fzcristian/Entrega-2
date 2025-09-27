@@ -1,0 +1,23 @@
+@use 'variables' as *;
+.carousel {
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+
+  .carousel-inner {
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.8rem;
+      object-fit: cover;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+      display: block;
+    }
+  }
+
+  // Opcional: controles del carrusel
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: drop-shadow(0 0 2px $color-accent);
+  }
+}
