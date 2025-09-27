@@ -435,6 +435,9 @@ footer .bi {
   .oasis-footer-social {
     gap: 1rem;
   }
+  .oasis-history-row:last-child {
+    margin-bottom: 2.5rem;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .oasis-main-title,
@@ -461,6 +464,9 @@ footer .bi {
   }
   .oasis-footer-social {
     gap: 0.7rem;
+  }
+  .oasis-history-row:last-child {
+    margin-bottom: 2rem;
   }
 }
 @media (max-width: 767px) {
@@ -489,6 +495,9 @@ footer .bi {
   }
   .oasis-footer-social {
     gap: 0.5rem;
+  }
+  .oasis-history-row:last-child {
+    margin-bottom: 1.5rem;
   }
 }
 @media (max-width: 480px) {
